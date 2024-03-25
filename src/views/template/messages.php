@@ -4,6 +4,11 @@ ini_set("display_errors",0);
 
 $errors =[];
 
+if(isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    unset($_SESSION['message']);
+}
+
 if($exception) {
     $message = [
         'type' => 'error',
